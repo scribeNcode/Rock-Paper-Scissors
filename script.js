@@ -13,3 +13,12 @@ function getComputerChoice(){
 }
 
 console.log(getComputerChoice())
+
+// logic to get the human choice
+
+function getHumanChoice(){
+  let userInput = prompt('Choose between rock, paper, and scissors')  
+  return userInput
+}
+
+console.log(getHumanChoice())
