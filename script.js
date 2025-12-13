@@ -18,7 +18,7 @@ console.log(getComputerChoice())
 
 function getHumanChoice(){
   let userInput = prompt('Choose between rock, paper, and scissors')  
-  return userInput
+  return userInput.toLowerCase()
 }
 
 console.log(getHumanChoice())
