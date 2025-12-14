@@ -45,4 +45,15 @@ function playRound(humanChoice, computerChoice){
   }
 }
 
-playRound(getHumanChoice(), getComputerChoice())
+// playRound(getHumanChoice(), getComputerChoice())
+
+//  Write the logic to play the entire game
+
+function playGame(human, computer){
+  for(let i = 0; i <= 4; i++){
+    playRound(human(), computer())
+  }
+  console.log(`HumanScore = ${humanScore} | ComputerScore ${computerScore}`)
+}
+
+playGame(getHumanChoice, getComputerChoice)
