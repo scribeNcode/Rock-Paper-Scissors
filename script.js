@@ -1,3 +1,16 @@
+// get all buttons
+let rockBtn = document.querySelector('#rock-btn');
+
+let paperBtn = document.querySelector('#paper');
+
+let scissorsBtn = document.querySelector('#scissors');
+
+let playBtn = document.querySelector('#play');
+
+
+
+
+
 // logic to get the computer choice
 function getComputerChoice(){
    let randomNum = Math.floor(Math.random()*3)
@@ -51,11 +64,12 @@ function playRound(humanChoice, computerChoice){
 
 //  Write the logic to play the entire game
 
-function playGame(human, computer){
-  for(let i = 0; i <= 4; i++){
-    playRound(human(), computer())
-  }
-  console.log(`HumanScore = ${humanScore} | ComputerScore ${computerScore}`)
-}
+// function playGame(human, computer){
+//   for(let i = 0; i <= 4; i++){
+//     playRound(human(), computer())
+//   }
+//   console.log(`HumanScore = ${humanScore} | ComputerScore ${computerScore}`)
+// }
 
-playGame(getHumanChoice, getComputerChoice)
+// playGame(getHumanChoice, getComputerChoice)
+
