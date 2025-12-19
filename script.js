@@ -7,8 +7,18 @@ let scissorsBtn = document.querySelector('#scissors');
 
 let playBtn = document.querySelector('#play');
 
+// get result div
+let resultWrapper = document.querySelector('#rps-result')
+
+// get scoreboard
+let humanCount = document.querySelector('#humanCount')
+let computerCount = document.querySelector('#computerCount')
 
 
+
+// Declare the players score variables
+let humanScore = 0;
+let computerScore = 0;
 
 
 // logic to get the computer choice
@@ -29,47 +39,88 @@ function getComputerChoice(){
 
 // logic to get the human choice
 
-function getHumanChoice(){
-  let userInput = prompt('Choose between rock, paper, and scissors')  
-  return userInput.toLowerCase()
+function getHumanChoice(humanSelection){
+  let userInput =  humanSelection
+  console.log(userInput)
+  return userInput
 }
 
 // console.log(getHumanChoice())
 
 
-// Declare the players score variables
-let humanScore = 0;
-let computerScore = 0;
 
 // logic to play a single round
 function playRound(humanChoice, computerChoice){
   if(humanChoice === 'rock' && computerChoice === 'scissors'){
     console.log(`You win! ${humanChoice} beats ${computerChoice}`)
-    humanScore += 1
+    handleHumanCount()
+    humanCount.textContent = humanScore
+    resultWrapper.textContent = `You win! ${humanChoice} beats ${computerChoice}`
   }else if(humanChoice === 'scissors' && computerChoice === 'paper'){
     console.log(`You win! ${humanChoice} beats ${computerChoice}`)
-    humanScore += 1
+    handleHumanCount()
+    humanCount.textContent = humanScore
+    resultWrapper.textContent = `You win! ${humanChoice} beats ${computerChoice}`
   }else if(humanChoice === 'paper' && computerChoice === 'rock'){
     console.log(`You win! ${humanChoice} beats ${computerChoice}`)
-    humanScore += 1
+    handleHumanCount()
+    humanCount.textContent = humanScore
+    resultWrapper.textContent = `You win! ${humanChoice} beats ${computerChoice}`
   }else if(humanChoice === computerChoice){
     console.log(`You had a tie`)
+    resultWrapper.textContent = `You had a tie`
   }else{
     console.log(`You loose! ${computerChoice} beats ${humanChoice}`)
-    computerScore += 1
+        handleComputerCount()
+    computerCount.textContent = computerScore
+    resultWrapper.textContent = `You loose! ${computerChoice} beats ${humanChoice}`
   }
 }
 
-// playRound(getHumanChoice(), getComputerChoice())
 
-//  Write the logic to play the entire game
+// Handle computer counter
+function handleComputerCount(){
+  if(computerScore <= 4){
+      computerScore += 1
+}
+}
 
-// function playGame(human, computer){
-//   for(let i = 0; i <= 4; i++){
-//     playRound(human(), computer())
-//   }
-//   console.log(`HumanScore = ${humanScore} | ComputerScore ${computerScore}`)
-// }
+function handleHumanCount(){
+     if(humanScore <= 4){
+      humanScore += 1
+}
+}
 
-// playGame(getHumanChoice, getComputerChoice)
+function handleGameWinner(){
+  if(computerScore == 5 && humanScore < 5){
+    console.log('Computer Wins')
+  }else if(humanScore === 5 && computerScore < 5){
+     console.log('Human Wins')
+  }
+}
 
+
+  
+
+rockBtn.addEventListener('click', ()=>{
+  playRound(getHumanChoice('rock'), getComputerChoice())
+  handleGameWinner()
+})
+
+paperBtn.addEventListener('click', ()=>{
+  playRound(getHumanChoice('paper'), getComputerChoice())
+  handleGameWinner()
+})
+
+scissorsBtn.addEventListener('click', ()=>{
+  playRound(getHumanChoice('scissors'), getComputerChoice())
+  handleGameWinner()
+})
+
+
+
+
+
+
+
+   
