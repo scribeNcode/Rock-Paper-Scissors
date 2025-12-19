@@ -15,6 +15,10 @@ let humanCount = document.querySelector('#humanCount')
 let computerCount = document.querySelector('#computerCount')
 
 
+// get gameWinnerAnnouncer
+let gameWinnerAnnouncer = document.querySelector('#gameWinnerAnnouncer')
+
+
 
 // Declare the players score variables
 let humanScore = 0;
@@ -94,8 +98,10 @@ function handleHumanCount(){
 function handleGameWinner(){
   if(computerScore == 5 && humanScore < 5){
     console.log('Computer Wins')
+    gameWinnerAnnouncer.textContent = 'Computer Wins'
   }else if(humanScore === 5 && computerScore < 5){
      console.log('Human Wins')
+      gameWinnerAnnouncer.textContent = 'Human Wins' 
   }
 }
 
