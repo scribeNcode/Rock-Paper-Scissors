@@ -99,9 +99,15 @@ function handleGameWinner(){
   if(computerScore == 5 && humanScore < 5){
     console.log('Computer Wins')
     gameWinnerAnnouncer.textContent = 'Computer Wins'
+    paperBtn.disabled = 'yes'
+    scissorsBtn.disabled = 'yes' 
+    rockBtn.disabled = 'yes'
   }else if(humanScore === 5 && computerScore < 5){
      console.log('Human Wins')
-      gameWinnerAnnouncer.textContent = 'Human Wins' 
+      gameWinnerAnnouncer.textContent = 'Human Wins'
+      paperBtn.disabled = 'yes'
+    scissorsBtn.disabled = 'yes' 
+    rockBtn.disabled = 'yes' 
   }
 }
 
