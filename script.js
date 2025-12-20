@@ -111,7 +111,21 @@ function handleGameWinner(){
   }
 }
 
+// write function to play game that refreshes the scoreboard 
 
+function playGame(){
+  humanScore = 0;
+  computerScore = 0;
+    // Make the buttons clickable
+  paperBtn.disabled = false
+  scissorsBtn.disabled = false
+  rockBtn.disabled = false 
+  // Set players counter to zero
+  humanCount.textContent = 0
+  computerCount.textContent = 0
+  // Clear game Winner Announcer
+  gameWinnerAnnouncer.textContent = ''
+}
   
 
 rockBtn.addEventListener('click', ()=>{
@@ -129,8 +143,12 @@ scissorsBtn.addEventListener('click', ()=>{
   handleGameWinner()
 })
 
+playBtn.addEventListener('click', ()=>{
+  playGame()
+})
 
-
+// let humanScore = 0;
+// let computerScore = 0;
 
 
 
